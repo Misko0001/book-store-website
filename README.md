@@ -2,7 +2,7 @@
 
 ## Desciption
 
-It users to order books and view order status.
+It allows users to order books and view order status. <br>
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.4.
 
 ## Development server
