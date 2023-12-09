@@ -1,4 +1,8 @@
-# Projekat
+# Website for a book store
+
+## Desciption
+
+It users to order books and view order status.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.4.
 
