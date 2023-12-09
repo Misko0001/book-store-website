@@ -1,0 +1,55 @@
+<section>
+  <div *ngFor="let bookArray of books; let index = index">
+    <mat-card class="cart-history" fxLayout="column" fxLayoutAlign="center center">
+      <mat-card-content>
+        <div *ngFor="let book of bookArray" class="book">
+          <div class="name">{{ book.name }} ({{ book.quantity }}X)</div>
+          <div>Genre: <span>{{ book.genre }}</span></div>
+          <div>Number of pages: <span>{{ book.pageNumber }}</span></div>
+          <div>Author: <span>{{ book.author }}</span></div>
+          <div>Publish date: <span>{{ book.publishDate | date:'MMM d, yyyy' }}</span></div>
+          <div>Price: <span>{{ book.price * book.quantity! }}</span></div>
+          <span *ngFor="let star of getStars(book.rating)" class="star-icon">
+            <mat-icon>{{ star }}</mat-icon>
+          </span>
+        </div>
+      </mat-card-content>
+      <div class="cart-history-info" fxLayout>
+        <div>
+          <p class="total-price">Total price: <span>{{ totalPrice[index] }}</span></p>
+          <p class="status">Status: 
+              <span 
+                  [ngClass]="{
+                      'arrived': cartStatus[index] === 'arrived',
+                      'in-progress': cartStatus[index] === 'in progress',
+                      'cancelled': cartStatus[index] === 'cancelled'
+                  }">
+                  {{ cartStatus[index] }}
+              </span>
+          </p>
+        </div>      
+        <button 
+          mat-icon-button 
+          color="warn" 
+          *ngIf="cartStatus[index] === 'arrived'" 
+          (click)="deleteOrder(userService.currentUser.id, index)">
+          <mat-icon>delete</mat-icon>
+        </button>
+        <button
+          mat-icon-button
+          *ngIf="cartStatus[index] === 'in progress'"
+          (click)="cancelOrder(userService.currentUser.id, index)"
+        >
+          <mat-icon>cancel</mat-icon>
+        </button>
+        <button
+          mat-icon-button
+          *ngIf="cartStatus[index] === 'cancelled'"
+          (click)="editCart(index)"
+        >
+          <mat-icon>edit</mat-icon>
+        </button>
+      </div>
+    </mat-card>
+  </div>
+</section>

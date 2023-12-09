@@ -1,0 +1,32 @@
+<section>
+  <h1 mat-dialog-title>Confirm order?</h1>
+  <mat-dialog-content fxLayout="column">
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Author</th>
+        <th>Price</th>
+      </tr>
+      <tr *ngFor="let book of books">
+        <td>{{ book.name }}</td>
+        <td>{{ book.author }}</td>
+        <td>({{ book.quantity }}X) {{ book.price * book.quantity! }} RSD</td>
+      </tr>
+    </table>
+    <p>Total price: <span>{{ totalPrice }} RSD</span></p>
+  </mat-dialog-content>
+  <mat-dialog-actions fxLayout fxLayoutAlign="space-between">
+    <button mat-button [mat-dialog-close]="true">
+      Back
+    </button>
+    <button 
+      mat-raised-button 
+      [mat-dialog-close]="false" 
+      routerLink="/"
+      color="primary"
+      (click)="confirmOrder()"
+    >
+      Confirm
+    </button>
+  </mat-dialog-actions>
+</section>

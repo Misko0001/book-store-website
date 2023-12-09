@@ -1,0 +1,14 @@
+footer {
+    padding: 15px 0 3px 0;
+    /* background: rgb(63, 81, 181); */
+    border-top: solid 1px rgb(184, 184, 184);
+}
+
+p,
+h4 {
+    text-align: center;
+}
+
+p {
+    margin-top: -15px;
+}

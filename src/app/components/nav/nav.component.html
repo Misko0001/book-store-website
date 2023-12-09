@@ -1,0 +1,25 @@
+<mat-toolbar color="primary">
+  <a routerLink="/">
+    <img src="assets/images/logo.jpg">
+  </a>
+  <a class="logo" routerLink="/">Book Store</a> 
+  <span class="spacer"></span>
+  <div>
+    <button 
+      class="profile-btn"
+      mat-raised-button 
+      color="warn"
+      (click)="openProfile(this.userService.currentUser.id)"
+      [ngClass]="hideTag('hide when anonymous')"
+    >
+      {{ this.userService.currentUser.email }}
+    </button>
+    <a class="link" mat-button routerLink="/">Home</a>
+    <a class="link" mat-button routerLink="/login" [ngClass]="hideTag('hide when logged in')">Login</a>
+    <a class="link" mat-button routerLink="/register" [ngClass]="hideTag('hide when logged in')">Register</a>
+    <a class="link" mat-button [ngClass]="hideTag('hide when anonymous')" (click)="logout()">Logout</a>
+    <button mat-icon-button routerLink="/cart">
+        <mat-icon>shopping_cart</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>

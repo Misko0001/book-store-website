@@ -1,0 +1,44 @@
+section {
+    margin: 100px 0 178px 0;
+}
+
+form {
+    width: 500px;
+    margin: auto;
+    padding: 100px 0 70px 0;
+    border: solid 1px rgb(162, 162, 162);
+    border-radius: 10px;
+}
+
+h1 {
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+
+mat-form-field,
+.submit {
+    width: 400px;
+}
+
+.submit {
+    margin: 10px 0 0 0;
+    padding: 20px 0;
+}
+
+h3 {
+    margin-top: 30px;
+}
+
+a {
+    color: grey;
+    margin-top: -10px;
+}
+
+a:hover {
+    color: rgb(100, 100, 100);
+}
+
+.submit-error {
+    padding-top: 10px;
+    color: red;
+}

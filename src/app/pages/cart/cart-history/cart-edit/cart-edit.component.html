@@ -1,0 +1,25 @@
+<section>
+    <mat-card>
+        <form>
+            <mat-card-content 
+                *ngFor="let book of books"
+                fxLayout
+                fxLayoutAlign="space-between"
+            >
+                <h1>{{ book.name }}</h1>
+                <input type="text" [(ngModel)]="book.quantity" [ngModelOptions]="{standalone: true}">
+            </mat-card-content>
+            <div fxLayout fxLayoutAlign="space-between">
+               <button mat-raised-button [mat-dialog-close]="true">Close</button>
+                <button 
+                    mat-raised-button 
+                    color="primary" 
+                    (click)="save()"
+                >
+                    Order
+                </button> 
+            </div>
+            
+        </form>
+    </mat-card>
+</section>

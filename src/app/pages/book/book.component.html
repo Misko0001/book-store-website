@@ -1,0 +1,27 @@
+<section fxLayout fxLayoutAlign="center">
+    <div>
+        <img src="{{ book.image }}">
+    </div>
+    <div>
+        <h1>{{ book.name }}</h1>
+        <p><span>Author:</span> {{ book.author }}</p>
+        <p><span>Genre:</span> {{ book.genre }}</p>
+        <p><span>Number of pages:</span> {{ book.pageNumber }}</p>
+        <p><span>Publish date:</span> {{ book.publishDate | date }}</p>
+        <span *ngFor="let star of getStars(book.rating)" class="star-icon">
+            <mat-icon>{{ star }}</mat-icon>
+        </span>
+        <p class="description">{{ book.description }}</p>
+        <p class="price"><span>Price:</span> {{ book.price }} RSD</p>
+        <form fxLayout>
+            <button 
+                type="submit" 
+                mat-raised-button 
+                color="primary" 
+                (click)="addToCart();"
+            >
+                <mat-icon>shopping_cart</mat-icon> Add to cart
+            </button>    
+        </form>
+    </div>
+</section>

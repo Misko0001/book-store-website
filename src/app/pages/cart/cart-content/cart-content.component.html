@@ -1,0 +1,117 @@
+<section>
+    <h1 fxLayoutAlign="center">Your Cart</h1>
+    <form 
+        fxLayout="column" 
+        fxLayoutAlign="center center" 
+        matSort
+    >
+        <mat-table [dataSource]="cartSource">
+            <ng-container matColumnDef="image">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>
+                    Image
+                </mat-header-cell>
+                <mat-cell *matCellDef="let book">
+                    <img src="{{ book.image }}">
+                </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="name">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>
+                    Name
+                </mat-header-cell>
+                <mat-cell *matCellDef="let book">
+                    {{ book.name }}
+                </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="genre">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>
+                    Genre
+                </mat-header-cell>
+                <mat-cell *matCellDef="let book">
+                    {{ book.genre }}
+                </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="pageNumber">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>
+                    Number of pages
+                </mat-header-cell>
+                <mat-cell *matCellDef="let book">
+                    {{ book.pageNumber | number }}
+                </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="author">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>
+                    Author
+                </mat-header-cell>
+                <mat-cell *matCellDef="let book">
+                    {{ book.author }}
+                </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="publishDate">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>
+                    Publish date
+                </mat-header-cell>
+                <mat-cell *matCellDef="let book">
+                    {{ book.publishDate | date }}
+                </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="price">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>
+                    Price
+                </mat-header-cell>
+                <mat-cell *matCellDef="let book">
+                    {{ book.price | number }}
+                </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="rating">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>
+                    Rating
+                </mat-header-cell>
+                <mat-cell *matCellDef="let book">
+                    <span 
+                        *ngFor="let star of getStars(book.rating)" 
+                        class="star-icon"
+                    >
+                        <mat-icon class="rating">{{ star }}</mat-icon>
+                    </span>
+                </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="input">
+                <mat-header-cell *matHeaderCellDef>
+                    Quantity
+                </mat-header-cell>
+                <mat-cell *matCellDef="let book">
+                    <input 
+                        type="text"
+                        [(ngModel)]="bookQuantity[book.id]"
+                        name="quantity-{{book.id}}"
+                        pattern="[0-9]*"
+                    >
+                </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="delete">
+                <mat-header-cell *matHeaderCellDef>
+                    Delete
+                </mat-header-cell>
+                <mat-cell *matCellDef="let book">
+                    <button 
+                        mat-icon-button
+                        color="warn" 
+                        (click)="removeBookFromCart(book)"
+                    >
+                        <mat-icon>remove</mat-icon>
+                    </button>
+                </mat-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="displayColumns"></mat-header-row>
+            <mat-row *matRowDef="let rows; columns: displayColumns;"></mat-row>
+        </mat-table>
+        <button 
+            class="order" 
+            mat-raised-button 
+            color="primary"
+            (click)="order()"
+        >
+            Order
+        </button>
+    </form>
+</section>

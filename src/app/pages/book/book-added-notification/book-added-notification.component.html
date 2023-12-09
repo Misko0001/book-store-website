@@ -1,0 +1,30 @@
+<section>
+    <h1 mat-dialog-title>Book successfully added to cart</h1>
+    <mat-dialog-content fxLayout>
+        <div>
+            <img src="{{ book.image }}">
+        </div>
+        <div>
+            <h2>{{ book.name }}</h2>
+            <p>{{ book.author }}</p>
+            <p>{{ book.price }} RSD</p>
+        </div>
+        
+    </mat-dialog-content>
+    <mat-dialog-actions fxLayout fxLayoutAlign="center">
+        <button 
+            mat-button 
+            [mat-dialog-close]="true"
+            routerLink="/"
+        >
+            Continue browsing
+        </button>
+        <button 
+            mat-button 
+            [mat-dialog-close]="false" 
+            routerLink="/cart"
+        >
+            <mat-icon>shopping_cart</mat-icon> Go to cart
+        </button>
+    </mat-dialog-actions>
+</section>

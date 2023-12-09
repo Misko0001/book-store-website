@@ -1,0 +1,75 @@
+section {
+    margin: 50px 0;
+    padding: 30px 10px;
+    background: whitesmoke;
+}
+
+img {
+    width: 350px;
+    height: 490px;
+    margin-right: 60px;
+    padding: 8px;
+    border: solid 1px rgb(162, 162, 162);
+}
+
+h1 {
+    margin-bottom: 30px;
+}
+
+p {
+    font-size: 15px;
+    margin-top: -10px;
+}
+
+span {
+    font-weight: bold;
+}
+
+span mat-icon {
+    color: gold;
+    margin: -5px 0 15px 0;
+}
+
+.description {
+    width: 500px;
+    padding: 0 0 10px 10px;
+    border-bottom: solid 1px rgb(162, 162, 162);
+}
+
+.price {
+    margin: 20px 0;
+    font-size: 16px;
+}
+
+button {
+    padding: 25px 40px;
+    margin-bottom: 5px; 
+    border-radius: 0;
+    box-shadow: none;
+}
+
+button:hover {
+    box-shadow: none;
+}
+
+mat-error {
+    margin-left: 3px;
+}
+
+@media screen and (max-width: 925px) {
+    img {
+        width: 0;
+        height: 0;
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .description {
+        width: 400px;
+        padding: 0 0 10px 10px;
+        border-bottom: solid 1px rgb(162, 162, 162);
+    }
+}

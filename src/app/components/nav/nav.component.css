@@ -1,0 +1,32 @@
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+img {
+  width: 55px;
+  height: 55px;
+  padding-top: 10px;
+}
+
+.logo {
+  color: white;
+  padding: 0 0 0px 10px;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.profile-btn {
+  margin-top: -11px;
+  margin-right: 8px;
+}
+
+.link {
+  margin-bottom: 10px;
+}
+
+.hidden {
+  display: none;
+}

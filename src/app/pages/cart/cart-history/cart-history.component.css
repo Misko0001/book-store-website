@@ -1,0 +1,66 @@
+.cart-history {
+    border: solid 1px rgb(162, 162, 162);
+    width: 600px;
+    margin: 20px auto; 
+    padding-bottom: 10px;
+}
+
+.book {
+    width: 500px;
+    padding: 20px 20px 10px 20px;
+    margin: 10px;
+    border: solid 1px rgb(162, 162, 162); 
+    border-radius: 5px;
+    background: whitesmoke;
+}
+
+.name {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.book div span {
+    font-weight: bold;
+} 
+
+span mat-icon {
+    color: gold;
+    margin: 5px 0 0 0;
+}
+
+.cart-history-info {
+    margin: 15px 0 10px 0;
+    padding: 15px 20px 0 20px;
+    font-size: 15px;
+    border: solid 1px rgb(162, 162, 162); 
+    border-radius: 5px;
+    background: whitesmoke;
+}
+
+.total-price span {
+    font-weight: bold;
+}
+
+.status {
+    margin-top: -10px;
+}
+
+.status span {
+    font-weight: bold;
+}
+
+.arrived {
+    color: green;
+}
+
+.in-progress {
+    color: orange;
+}
+
+.cancelled {
+    color: red;
+}
+
+button {
+    margin: -5px -15px 0 5px;
+}

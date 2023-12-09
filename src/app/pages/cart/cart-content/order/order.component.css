@@ -1,0 +1,32 @@
+section {
+    width: 380px;
+}
+
+table {
+    border-top: solid 1px rgb(162, 162, 162);
+    border-bottom: solid 1px rgb(162, 162, 162);
+    padding: 10px 0;
+}
+
+td {
+    text-align: center;
+    font-size: 15px;
+}
+
+p {
+    margin: 15px 0 0 5px;
+    color: black;
+}
+
+mat-dialog-actions {
+    margin: -10px 10px 10px 10px;
+}
+
+button {
+    border: solid 1px rgb(162, 162, 162);
+    box-shadow: none;
+}
+
+button:hover {
+    box-shadow: none;
+}

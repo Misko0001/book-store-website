@@ -1,0 +1,44 @@
+h1 {
+    margin: 60px 0;
+    font-size: 30px;
+}
+
+form {
+    width: 80%;
+    margin: 0 auto 100px auto;
+    border: solid 1px rgb(162, 162, 162);
+}
+
+.search-sort {
+    display: flex;
+    align-items: center;
+    border-bottom: solid 1px rgb(162, 162, 162);
+}
+
+.search {
+    width: 40%;
+    border-right: solid 1px rgb(162, 162, 162);
+}
+
+.search mat-form-field {
+    width: 100%;
+    margin-bottom: -23px;
+}
+
+mat-paginator {
+    width: 60%;
+}
+
+img {
+    margin: 10px 0;
+    height: 140px;
+    width: 100px;
+}
+
+mat-icon {
+    color: gold;
+}
+
+.mat-mdc-row:hover .mat-mdc-cell {
+  background: whitesmoke;
+}

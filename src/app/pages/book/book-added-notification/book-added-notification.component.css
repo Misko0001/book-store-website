@@ -1,0 +1,38 @@
+section {
+    width: 400px;
+}
+
+h1 {
+    padding: 5px 0;
+    text-align: center;
+}
+
+mat-dialog-content {
+    margin-bottom: 10px;
+    border-top: solid 1px rgb(162, 162, 162);
+    border-bottom: solid 1px rgb(162, 162, 162);
+    background: whitesmoke;
+}
+
+mat-dialog-content div {
+    padding: 20px 0 0 0;
+}
+
+img {
+    margin-right: 15px;
+    padding: 4px;
+    border: solid 1px rgb(162, 162, 162);
+}
+
+p {
+    margin-top: -10px;
+}
+
+div mat-icon {
+    color: gold;
+}
+
+button {
+    border: solid 1px rgb(162, 162, 162);
+    margin-bottom: 10px;
+}

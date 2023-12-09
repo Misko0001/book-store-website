@@ -1,0 +1,154 @@
+<section fxLayout fxLayoutAlign="center center">
+    <form 
+        fxLayout="column" 
+        fxLayoutAlign="center center"
+        #form="ngForm"
+        (ngSubmit)="onSubmit(form)"
+    >
+        <h1>Register</h1>
+        <mat-form-field>
+            <mat-label>Name and surname</mat-label>
+            <input 
+                type="text" 
+                matInput 
+                ngModel
+                name="nameSurname"
+                required
+                nameSurname
+                #nameSurnameInput="ngModel"
+            >
+            <mat-error *ngIf="nameSurnameInput.hasError('required')">
+                Field should not be empty
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input 
+                type="email" 
+                matInput 
+                ngModel
+                name="email"
+                required
+                email
+                #emailInput="ngModel"
+            >
+            <mat-error *ngIf="emailInput.hasError('required')">
+                Field should not be empty
+            </mat-error>
+            <mat-error *ngIf="!emailInput.hasError('required')">
+                Please use the correct email format
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Phone</mat-label>
+            <input 
+                type="text" 
+                matInput 
+                ngModel
+                name="phone"
+                required
+                phone
+                #phoneInput="ngModel"
+            >
+            <mat-error *ngIf="phoneInput.hasError('required')">
+                Field should not be empty
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Address</mat-label>
+            <input 
+                type="text" 
+                matInput 
+                ngModel
+                name="address"
+                required
+                address
+                #addressInput="ngModel"
+            >
+            <mat-error *ngIf="addressInput.hasError('required')">
+                Field should not be empty
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Favorite book genre</mat-label>
+            <input 
+                type="text" 
+                matInput 
+                ngModel
+                name="favoriteGenre"
+                required
+                favoriteGenre
+                #bookGenreInput="ngModel"
+            >
+            <mat-error *ngIf="bookGenreInput.hasError('required')">
+                Field should not be empty
+            </mat-error>
+        </mat-form-field>
+        <div class="password-div">
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input 
+                    matInput 
+                    [type]="hide ? 'password' : 'text'"
+                    ngModel
+                    name="password"
+                    required
+                    password
+                    #passwordInput="ngModel"
+                >
+                <button 
+                    type="button"
+                    mat-icon-button 
+                    matSuffix 
+                    (click)="hide = !hide" 
+                    [attr.aria-label]="'Hide password'" 
+                    [attr.aria-pressed]="hide"
+                >
+                    <mat-icon>
+                        {{hide ? 'visibility_off' : 'visibility'}}
+                    </mat-icon>
+                </button>
+                <mat-error *ngIf="passwordInput.hasError('required')">
+                    Field should not be empty
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Confirm</mat-label>
+                <input 
+                    matInput 
+                    [type]="hide ? 'password' : 'text'"
+                    ngModel
+                    name="confirm"
+                    required
+                    confirm
+                    #passwordInput="ngModel"
+                >
+                <button 
+                    type="button"
+                    mat-icon-button 
+                    matSuffix 
+                    (click)="hide = !hide" 
+                    [attr.aria-label]="'Hide password'" 
+                    [attr.aria-pressed]="hide"
+                >
+                    <mat-icon>
+                        {{hide ? 'visibility_off' : 'visibility'}}
+                    </mat-icon>
+                </button>
+                <mat-error *ngIf="passwordInput.hasError('required')">
+                    Field should not be empty
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <button 
+            class="submit" 
+            type="submit" 
+            mat-raised-button 
+            color="primary"
+            [disabled]="form.invalid"
+        >
+            Register
+        </button>
+        <mat-label class="submit-error" *ngIf="errorExists">{{ errorText }}</mat-label>
+    </form>
+</section>
